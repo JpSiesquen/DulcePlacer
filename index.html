@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dulce Placer | Pastelería a pedido</title>
     <meta name="description" content="Pastelería artesanal a pedido en Chile. Tortas, cupcakes y postres personalizados para cumpleaños, bodas, eventos y regalos.">
+    <meta name="theme-color" content="#FFF8F2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preload" as="image" href="assets/images/back.png" fetchpriority="high">
     <!-- swiper link  -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css" />
     <!-- cdn icon link  -->
@@ -24,28 +30,32 @@
     <!-- header section start here  -->
     <header class="header">
         <div class="logoContent">
-            <a href="#" class="logo"><img src="assets/images/logo.png" alt="Logo de Dulce Placer"></a>
+            <a href="#" class="logo"><img src="assets/images/logo.png" alt="Logo de Dulce Placer" fetchpriority="high"></a>
             <a href="index.html" class="logoName">Dulce Placer</a>
         </div>
-        <nav class="navbar">
+        <nav class="navbar" id="site-navigation" aria-label="Navegación principal">
             <a href="#home">INICIO</a>
             <a href="#product">CATÁLOGO</a>
             <a href="#blogs">PROMOCIONES</a>
             <a href="#review">OPINIONES</a>            
         </nav>
+        <button class="nav-backdrop" type="button" aria-hidden="true" tabindex="-1"></button>
         <div class="icon">
-            <i class="fas fa-bars" id="menu-bar"></i>
+            <button class="menu-toggle" id="menu-bar" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Abrir menú de navegación">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
         </div>
     </header>
     <!-- header section end here  -->
 
+    <main>
     <!-- home section start here  -->
     <section class="home" id="home">
         <div class="homeContent">
             <h2>Pasteles caseros para celebrar lo que importa</h2>
             <p>Creamos tortas, cupcakes y postres a pedido para cumpleaños, bodas, reuniones y regalos. Sabor fresco, presentación cuidada y atención rápida en cada pedido.</p>
             <div class="home-btn">
-                <a href="#product"><button>Ver catálogo</button></a>
+                <a href="#product" class="button button-accent">Ver catálogo</a>
             </div>
         </div>
     </section>
@@ -81,49 +91,49 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide box">
                     <div class="img">
-                        <img src="assets/images/cake1.png" alt="Torta de chocolate intenso">
+                        <img src="assets/images/cake1.png" alt="Torta de chocolate intenso" loading="lazy" decoding="async">
                     </div>
                     <div class="product-content">
                         <h3>Chocolate intenso</h3>
                         <p>Una opción clásica, elegante y equilibrada, ideal para cumpleaños y celebraciones familiares.</p>
                         <div class="orderNow">
-                            <button aria-label="Pedir torta de Chocolate intenso">pedir este sabor</button>
+                            <a href="#contact" class="button button-accent" data-product-name="Chocolate intenso" aria-label="Pedir torta de Chocolate intenso">pedir este sabor</a>
                         </div>
                     </div>
                 </div>
                 <div class="swiper-slide box">
                     <div class="img">
-                        <img src="assets/images/cake2.png" alt="Torta de vainilla cremosa">
+                        <img src="assets/images/cake2.png" alt="Torta de vainilla cremosa" loading="lazy" decoding="async">
                     </div>
                     <div class="product-content">
                         <h3>Vainilla cremosa</h3>
                         <p>Suave, versátil y muy fácil de combinar con rellenos, coberturas y decoraciones personalizadas.</p>
                         <div class="orderNow">
-                            <button aria-label="Pedir torta de Vainilla cremosa">pedir este sabor</button>
+                            <a href="#contact" class="button button-accent" data-product-name="Vainilla cremosa" aria-label="Pedir torta de Vainilla cremosa">pedir este sabor</a>
                         </div>
                     </div>
                 </div>
                 <div class="swiper-slide box">
                     <div class="img">
-                        <img src="assets/images/cake3.png" alt="Torta red velvet">
+                        <img src="assets/images/cake3.png" alt="Torta red velvet" loading="lazy" decoding="async">
                     </div>
                     <div class="product-content">
                         <h3>Red velvet</h3>
                         <p>Perfecto para regalos y eventos donde buscas una presentación más llamativa y sofisticada.</p>
                         <div class="orderNow">
-                            <button aria-label="Pedir torta de Red velvet">pedir este sabor</button>
+                            <a href="#contact" class="button button-accent" data-product-name="Red velvet" aria-label="Pedir torta de Red velvet">pedir este sabor</a>
                         </div>
                     </div>
                 </div>
                 <div class="swiper-slide box">
                     <div class="img">
-                        <img src="assets/images/cake3.png" alt="Torta tres leches">
+                        <img src="assets/images/cake3.png" alt="Torta tres leches" loading="lazy" decoding="async">
                     </div>
                     <div class="product-content">
                         <h3>Tres leches</h3>
                         <p>Una de las opciones favoritas para mesas dulces, con una textura húmeda y un sabor que siempre funciona.</p>
                         <div class="orderNow">
-                            <button aria-label="Pedir torta de Tres leches">pedir este sabor</button>
+                            <a href="#contact" class="button button-accent" data-product-name="Tres leches" aria-label="Pedir torta de Tres leches">pedir este sabor</a>
                         </div>
                     </div>
                 </div>
@@ -134,49 +144,49 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide box">
                     <div class="img">
-                        <img src="assets/images/cake1.png" alt="Torta de chocolate y avellanas">
+                        <img src="assets/images/cake1.png" alt="Torta de chocolate y avellanas" loading="lazy" decoding="async">
                     </div>
                     <div class="product-content">
                         <h3>Chocolate y avellanas</h3>
                         <p>Una combinación más premium para quienes quieren un postre con carácter y acabado sofisticado.</p>
                         <div class="orderNow">
-                            <button aria-label="Pedir torta de Chocolate y avellanas">pedir este sabor</button>
+                            <a href="#contact" class="button button-accent" data-product-name="Chocolate y avellanas" aria-label="Pedir torta de Chocolate y avellanas">pedir este sabor</a>
                         </div>
                     </div>
                 </div>
                 <div class="swiper-slide box">
                     <div class="img">
-                        <img src="assets/images/cake2.png" alt="Torta de fresa y crema">
+                        <img src="assets/images/cake2.png" alt="Torta de fresa y crema" loading="lazy" decoding="async">
                     </div>
                     <div class="product-content">
                         <h3>Fresa y crema</h3>
                         <p>Ligero, fresco y visualmente atractivo, pensado para celebraciones de tarde o regalos especiales.</p>
                         <div class="orderNow">
-                            <button aria-label="Pedir torta de Fresa y crema">pedir este sabor</button>
+                            <a href="#contact" class="button button-accent" data-product-name="Fresa y crema" aria-label="Pedir torta de Fresa y crema">pedir este sabor</a>
                         </div>
                     </div>
                 </div>
                 <div class="swiper-slide box">
                     <div class="img">
-                        <img src="assets/images/cake3.png" alt="Torta de limón y merengue">
+                        <img src="assets/images/cake3.png" alt="Torta de limón y merengue" loading="lazy" decoding="async">
                     </div>
                     <div class="product-content">
                         <h3>Limón y merengue</h3>
                         <p>Una opción fresca y diferente para quienes prefieren un postre más ligero, sin perder impacto visual.</p>
                         <div class="orderNow">
-                            <button aria-label="Pedir torta de Limón y merengue">pedir este sabor</button>
+                            <a href="#contact" class="button button-accent" data-product-name="Limón y merengue" aria-label="Pedir torta de Limón y merengue">pedir este sabor</a>
                         </div>
                     </div>
                 </div>
                 <div class="swiper-slide box">
                     <div class="img">
-                        <img src="assets/images/cake3.png" alt="Torta de cookies y crema">
+                        <img src="assets/images/cake3.png" alt="Torta de cookies y crema" loading="lazy" decoding="async">
                     </div>
                     <div class="product-content">
                         <h3>Cookies & cream</h3>
                         <p>Muy pedido por niños y adultos por igual, ideal para cumpleaños y mesas dulces con personalidad.</p>
                         <div class="orderNow">
-                            <button aria-label="Pedir torta de Cookies &amp; cream">pedir este sabor</button>
+                            <a href="#contact" class="button button-accent" data-product-name="Cookies &amp; cream" aria-label="Pedir torta de Cookies &amp; cream">pedir este sabor</a>
                         </div>
                     </div>
                 </div>
@@ -193,7 +203,7 @@
             <div class="swiper-wrapper">
                 <div class=" swiper-slide box">
                     <div class="img">
-                        <img src="assets/images/blog-img1.png" alt="Cupcakes decorados para mesa dulce">
+                        <img src="assets/images/blog-img1.png" alt="Cupcakes decorados para mesa dulce" loading="lazy" decoding="async">
                     </div>
                     <div class="content">
                         <h3>Opciones que elevan tu mesa dulce</h3>
@@ -204,7 +214,7 @@
                 </div>
                 <div class=" swiper-slide box">
                     <div class="img">
-                        <img src="assets/images/blog-img2.png" alt="Postres listos para regalar con empaque de regalo">
+                        <img src="assets/images/blog-img2.png" alt="Postres listos para regalar con empaque de regalo" loading="lazy" decoding="async">
                     </div>
                     <div class="content">
                         <h3>Postres listos para regalar</h3>
@@ -215,7 +225,7 @@
                 </div>
                 <div class=" swiper-slide box">
                     <div class="img">
-                        <img src="assets/images/blog-img2.png" alt="Producción de postres para eventos y empresas">
+                        <img src="assets/images/blog-img2.png" alt="Producción de postres para eventos y empresas" loading="lazy" decoding="async">
                     </div>
                     <div class="content">
                         <h3>Producción para eventos y empresas</h3>
@@ -225,19 +235,21 @@
                     </div>
                 </div>
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next blogs-next" aria-label="Siguiente promoción"></div>
+            <div class="swiper-button-prev blogs-prev" aria-label="Promoción anterior"></div>
+            <div class="swiper-pagination blogs-pagination"></div>
         </div>
     </section>
     <!-- blogs section ends here  -->
 
     <!-- newsletter section start here  -->
     <section class="newsletter">
-        <form action="">
+        <form id="newsletter-form" novalidate>
             <h3>Recibe ofertas, lanzamientos y fechas especiales</h3>
-            <input type="email" name="" placeholder="ingresa tu correo" id="" class="box">
-            <input type="button" value="quiero promociones" class="box2">
+            <label class="sr-only" for="newsletter-email">Correo electrónico</label>
+            <input type="email" name="email" placeholder="ingresa tu correo" id="newsletter-email" class="box" autocomplete="email" inputmode="email" required>
+            <button type="submit" class="box2">quiero promociones</button>
+            <p class="form-status" id="newsletter-status" aria-live="polite"></p>
         </form>
     </section>
     <!-- newsletter section ends here  -->
@@ -255,7 +267,7 @@
                     </div>
                     <div class="client-info">
                         <div class="img">
-                            <img src="assets/images/client1.jpg" alt="Foto de cliente satisfecho">
+                            <img src="assets/images/client1.jpg" alt="Foto de cliente satisfecho" loading="lazy" decoding="async">
                         </div>
                         <div class="clientDetailed">
                             <h3>María G.</h3>
@@ -269,7 +281,7 @@
                     </div>
                     <div class="client-info">
                         <div class="img">
-                            <img src="assets/images/client1.jpg" alt="Foto de cliente satisfecho">
+                            <img src="assets/images/client1.jpg" alt="Foto de cliente satisfecho" loading="lazy" decoding="async">
                         </div>
                         <div class="clientDetailed">
                             <h3>Carlos P.</h3>
@@ -283,7 +295,7 @@
                     </div>
                     <div class="client-info">
                         <div class="img">
-                            <img src="assets/images/client1.jpg" alt="Foto de cliente satisfecho">
+                            <img src="assets/images/client1.jpg" alt="Foto de cliente satisfecho" loading="lazy" decoding="async">
                         </div>
                         <div class="clientDetailed">
                             <h3>Lucía R.</h3>
@@ -297,7 +309,7 @@
                     </div>
                     <div class="client-info">
                         <div class="img">
-                            <img src="assets/images/client1.jpg" alt="Foto de cliente satisfecho">
+                            <img src="assets/images/client1.jpg" alt="Foto de cliente satisfecho" loading="lazy" decoding="async">
                         </div>
                         <div class="clientDetailed">
                             <h3>Andrés M.</h3>
@@ -306,9 +318,10 @@
                     </div>
                 </div>
             </div>
-            <div class="swiper-pagination"></div>
+            <div class="swiper-pagination review-pagination"></div>
         </div>
     </section>
+    </main>
     <!-- review section ends here  -->
 
     <!-- footer section start here  -->
@@ -316,7 +329,7 @@
         <div class="box-container">
             <div class="mainBox">
                 <div class="content">
-                    <a href="#"><img src="assets/images/logo.png" alt="Logo de Dulce Placer"></a>
+                    <a href="#"><img src="assets/images/logo.png" alt="Logo de Dulce Placer" loading="lazy" decoding="async"></a>
                     <a href="index.html" class="logoName footer-logoName">Dulce Placer</a>
                 </div>
                 <p>Repostería artesanal hecha a pedido para cumpleaños, bodas, mesas dulces y regalos que dejan buena impresión.</p>
@@ -338,7 +351,7 @@
                 <a href="#"> <i class="fas fa-arrow-right"></i>SERVICIOS PARA EVENTOS</a>
             </div>
             <div class="box">
-                <h3>Información de contacto</h3>
+                <h3 class="contact-heading">Información de contacto</h3>
                 <a href="#"> <i class="fas fa-phone"></i>+56 900 000 000</a>
                 <a href="#"> <i class="fas fa-envelope"></i>contacto@dulceplacer.com</a>
             </div>
@@ -353,9 +366,9 @@
         </div>
     </footer>
     <!-- swiper js link  -->
-    <script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/swiper@11/swiper-bundle.min.js" defer></script>
 
     <!-- custom js file  -->
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js" defer></script>
 </body>
 </html>
