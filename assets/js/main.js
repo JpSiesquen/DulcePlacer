@@ -5,6 +5,55 @@ const state = {
     selectedProduct: '',
 };
 
+function setActiveNavigationLink(activeId = '') {
+    $$('.navbar a').forEach((link) => {
+        const href = link.getAttribute('href') || '';
+        const isActive = activeId && href === `#${activeId}`;
+
+        link.classList.toggle('is-active', isActive);
+        link.setAttribute('aria-current', isActive ? 'page' : 'false');
+    });
+}
+
+function initHeaderState() {
+    const header = $('.header');
+    const sections = $$('main section[id]');
+
+    if (!header) {
+        return;
+    }
+
+    const updateHeaderOnScroll = () => {
+        header.classList.toggle('is-scrolled', window.scrollY > 18);
+    };
+
+    updateHeaderOnScroll();
+    window.addEventListener('scroll', updateHeaderOnScroll, { passive: true });
+
+    if (!sections.length) {
+        return;
+    }
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            const visibleEntries = entries
+                .filter((entry) => entry.isIntersecting)
+                .sort((entryA, entryB) => entryB.intersectionRatio - entryA.intersectionRatio);
+
+            if (visibleEntries.length) {
+                setActiveNavigationLink(visibleEntries[0].target.id);
+            }
+        },
+        {
+            rootMargin: '-25% 0px -45% 0px',
+            threshold: [0.2, 0.35, 0.5, 0.7],
+        }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    setActiveNavigationLink(sections[0].id);
+}
+
 function setMenuState(isOpen) {
     const navbar = $('.navbar');
     const menuButton = $('#menu-bar');
@@ -216,6 +265,7 @@ function initVisibilityHandling() {
 }
 
 function initApp() {
+    initHeaderState();
     initMobileMenu();
     initSwipers();
     initNewsletterForm();
